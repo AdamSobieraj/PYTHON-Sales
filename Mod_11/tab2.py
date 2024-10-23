@@ -1,6 +1,6 @@
 from dash import dcc
 from dash import html
-from plotly import go
+import plotly.graph_objects as go
 
 def render_tab(df):
 

@@ -79,7 +79,7 @@ def render_content(tab):
               [Input('sales-range', 'start_date'), Input('sales-range', 'end_date')])
 def tab1_bar_sales(start_date, end_date):
     truncated = df.merged[(df.merged['tran_date'] >= start_date) & (df.merged['tran_date'] <= end_date)]
-    grouped = truncated[truncated['total_amt'] > 0].groupby([pd.Grouper(key='tran_date', freq='M'), 'Store_type'])[
+    grouped = truncated[truncated['total_amt'] > 0].groupby([pd.Grouper(key='tran_date', freq='ME'), 'Store_type'])[
         'total_amt'].sum().round(2).unstack()
 
     traces = []
