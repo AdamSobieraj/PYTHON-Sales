@@ -1,6 +1,7 @@
 from dash import dcc
 from dash import html
 from plotly import go
+
 def render_tab(df):
 
     grouped = df[df['total_amt']>0].groupby('prod_cat')['total_amt'].sum()
